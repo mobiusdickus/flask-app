@@ -1,5 +1,14 @@
 version: '3'
 
+x-shipyard-templates:
+
+  site-influx:
+    image: 'influxdb:1.7-alpine'
+    ports:
+      - '8086'
+    volumes:
+      - 'site-influx:/var/lib/influxdb'
+
 services:
 
   web:
